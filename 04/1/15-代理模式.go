@@ -47,7 +47,7 @@ func (op *OverseasProxy) Buy(goods *Goods) {
 	// 1. 先验货
 	if (op.distinguish(goods) == true) {
 		//2. 进行购买
-		op.shopping.Buy(goods) //调用原被代理的具体主题任务
+		op.shopping.Buy(goods) //调用原被代理的具体主题任务 //多态
 		//3 海关安检
 		op.check(goods)
 	}
@@ -92,7 +92,7 @@ func main() {
 	if g1.Fact == true {
 		fmt.Println("对[", g1.Kind,"]进行了辨别真伪.")
 		//2-去韩国购买
-		shopping.Buy(&g1)
+		shopping.Buy(&g1) //多态
 		//3-海关安检
 		fmt.Println("对[",g1.Kind,"] 进行了海关检查， 成功的带回祖国")
 	}
@@ -100,6 +100,12 @@ func main() {
 	fmt.Println("---------------以下是 使用 代理模式-------")
 	var overseasProxy Shopping
 	overseasProxy = NewProxy(shopping)
-	overseasProxy.Buy(&g1)
+	overseasProxy.Buy(&g1) //多态
 	overseasProxy.Buy(&g2)
+
+
+	fmt.Println("---------------以下是 使用 代理模式-------")
+	var overseasProxy2 Shopping
+	overseasProxy2 = NewProxy(new(AmericanShopping))
+	overseasProxy2.Buy(&g1)
 }

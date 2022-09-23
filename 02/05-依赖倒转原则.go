@@ -34,7 +34,7 @@ type Zhang_3 struct {
 
 func (zhang3 *Zhang_3) Drive(car Car) {
 	fmt.Println("Zhang3 drive car")
-	car.Run()
+	car.Run()//多态
 }
 
 type Li_4 struct {

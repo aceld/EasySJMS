@@ -34,6 +34,14 @@ func (pear *Pear) Show() {
 	fmt.Println("我是梨")
 }
 
+type Peach struct {
+
+}
+
+func (peach *Peach) Show() {
+	//...
+}
+
 // ========= 工厂模块  =========
 //一个工厂， 有一个生产水果的机器，返回一个抽象水果的指针
 type Factory struct {}
@@ -47,6 +55,8 @@ func (fac *Factory) CreateFruit(kind string) Fruit {
 		fruit = new(Banana)
 	} else if kind == "pear" {
 		fruit = new(Pear)
+	} else if kind == "peach" {
+		fruit = new(Peach)
 	}
 
 	return fruit
@@ -58,7 +68,7 @@ func main() {
 	factory := new(Factory)
 
 	apple := factory.CreateFruit("apple")
-	apple.Show()
+	apple.Show() //多态 //苹果对象的方法
 
 	banana := factory.CreateFruit("banana")
 	banana.Show()

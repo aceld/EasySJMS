@@ -15,6 +15,10 @@ type AbstractPear interface {
 	ShowPear()
 }
 
+type AbstractPeach interface {
+
+}
+
 //抽象工厂
 type AbstractFactory interface {
 	CreateApple() AbstractApple
@@ -158,6 +162,10 @@ func (af *AmericanFactory) CreatePear() AbstractPear {
 	return pear
 }
 
+//英国工厂、英国的苹果、香蕉、梨 (新增一个产品族，符合开闭原则)
+
+//添加一个桃子(新增产品等级结构)
+
 // ======== 业务逻辑层 =======
 func main() {
 	//需求1: 需要美国的苹果、香蕉、梨 等对象
@@ -191,4 +199,7 @@ func main() {
 	//3-生产中国香蕉
 	cBanana := cFac.CreateBanana()
 	cBanana.ShowBanana()
+
+	//需求3： 美国的苹果，中国香蕉,
+
 }

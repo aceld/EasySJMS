@@ -36,6 +36,12 @@ func (s *singelton) SomeThing() {
 }
 
 func main() {
-	s := GetInstance()
-	s.SomeThing()
+	s1 := GetInstance()
+	s1.SomeThing()
+
+	s2 := GetInstance()
+
+	if s1 == s2 {
+		fmt.Println("s1 == s2")
+	}
 }

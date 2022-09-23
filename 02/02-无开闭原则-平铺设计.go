@@ -4,6 +4,7 @@ import "fmt"
 
 //我们要写一个类,Banker银行业务员
 type Banker struct {
+
 }
 
 //存款业务
@@ -19,6 +20,10 @@ func (this *Banker) Transfer() {
 //支付业务
 func (this *Banker) Pay() {
 	fmt.Println( "进行了 支付业务...")
+}
+
+func (this *Banker) Fund() {
+
 }
 
 func main() {

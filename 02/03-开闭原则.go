@@ -35,6 +35,15 @@ func (pb *PayBanker) DoBusi() {
 }
 
 
+type FundBanker struct {
+
+}
+
+func (fb *FundBanker) DoBusi() {
+
+}
+
+
 func main() {
 	//进行存款
 	sb := &SaveBanker{}

@@ -3,18 +3,14 @@ package main
 import "fmt"
 
 // === > 奔驰汽车 <===
-type Benz struct {
-
-}
+type Benz struct {}
 
 func (this *Benz) Run() {
 	fmt.Println("Benz is running...")
 }
 
 // === > 宝马汽车  <===
-type BMW struct {
-
-}
+type BMW struct {}
 
 func (this *BMW) Run() {
 	fmt.Println("BMW is running ...")

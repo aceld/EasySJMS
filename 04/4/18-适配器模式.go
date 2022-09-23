@@ -18,7 +18,7 @@ func NewPhone(v V5) *Phone {
 
 func (p *Phone) Charge() {
 	fmt.Println("Phone进行充电...")
-	p.v.Use5V()
+	p.v.Use5V() //调用适配器的接口
 }
 
 

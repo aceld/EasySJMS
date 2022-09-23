@@ -24,4 +24,5 @@ func (s *singelton) SomeThing() {
 func main() {
 	s := GetInstance()
 	s.SomeThing()
+
 }

@@ -33,5 +33,3 @@ func main() {
 	s := GetInstance()
 	s.SomeThing()
 }
-
-
