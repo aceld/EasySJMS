@@ -10,7 +10,6 @@ func GetInstance() *singelton {
 	//只有首次GetInstance()方法被调用，才会生成这个单例的实例
 	if instance == nil {
 		instance = new(singelton)
-		return instance
 	}
 
 	//接下来的GetInstance直接返回已经申请的实例即可

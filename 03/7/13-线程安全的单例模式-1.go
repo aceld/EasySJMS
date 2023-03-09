@@ -18,10 +18,9 @@ func GetInstance() *singelton {
 	defer lock.Unlock()
 
 	if instance == nil {
-		return new(singelton)
-	} else {
-		return instance
+		instance = new(singelton)
 	}
+	return instance
 }
 
 func (s *singelton) SomeThing() {
